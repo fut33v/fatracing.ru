@@ -4,7 +4,7 @@ import Header from '../components/header'
 import Head from 'next/head'
 import Link from 'next/link'
 // import markdownToHtml from '../lib/markdownToHtml'
-import { getAllPosts } from '../lib/api'
+// import { getAllPosts } from '../lib/api'
 
 export default function Index({ allPosts }) {
   return (
