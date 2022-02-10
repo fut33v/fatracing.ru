@@ -13,10 +13,14 @@ title: 'Тур Де Селищи'
 
 - 28 мая
 
-## Ресурсы
+### Ресурсы
 
 - [Группа ВКонтакте](https://vk.com/tourdeselishi)
 - [Чат в Telegram](https://t.me/+RHus2csaKjlhZTU6)
+
+### Маршрут
+
+- [RWG](https://ridewithgps.com/routes/27443328)
 
 ### Прошедшие мероприятия
 

@@ -4,14 +4,17 @@ title: 'Вяломарафон'
 
 ## Вяломарафон
 
-![]()
+![](https://sun9-29.userapi.com/impg/UetpZSDXDw7xDd9SX6MlTxj6x9zrYJHDXLZbZA/P_xbiZxuhwQ.jpg?size=1527x2160&quality=95&sign=3566d6ae43856c743b54448d6ee82797&type=album)
 
-Бла бла бла.
+Веломарафон по лесному маршруту на 20 километров. Две дистанции: 20 и 40 километров.
 
-## Ресурсы
+### Категории
+- TODO
+
+### Ресурсы
 
 - [Группа ВКонтакте](https://vk.com/vyalomarafon)
-- [Чат в Telegram]()
+- [Чат в Telegram](https://t.me/+ayeEdV79KtQ1NDRi)
 
 ### Прошедшие мероприятия
 
@@ -19,12 +22,12 @@ title: 'Вяломарафон'
 
 ### Участники
 
-- Вяломарафон 2021 - 40?
+- Вяломарафон 2021 - 41 участник
 
 ### Протоколы
 
-- [Вяломарафон 2021](https://docs.google.com/spreadsheets/d/134qmlEOVFR5AofogvrQ2HFT-VRBwjAbZHIbEixstCC0/edit?usp=sharing)
+- [Вяломарафон 2021](https://docs.google.com/spreadsheets/d/1aji1g2P0YObkSqLMda3x1esOjM48BnS9n30alkXQ3KU/edit?usp=sharing)
 
 ### Фотоотчёты
 
-- [Вяломарафон 2021]() 
+- [Вяломарафон 2021](https://vk.com/album-207215645_281126180)
