@@ -1,43 +1,62 @@
-import Link from 'next/link'
+import Link from "next/link";
+import s from "../styles/header.module.css";
 
 export default function Header() {
+  const links = [
+    {
+      title: "ТИПА ЦИКЛОКРОСС",
+      url: "/tipacyclo"
+    },
+    {
+      title: "Тур Де Селищи",
+      url: "/tourdeselishi"
+    },
+    {
+      title: "Вяломарафон",
+      url: "/vyalomarafon"
+    },
+    {
+      title: "ЦАРЬ ГРЕЙДЕР",
+      url: "/tsargravel"
+    },
+    {
+      title: "НОВГОРОДСКИЙ КРИТ",
+      url: "/critvn"
+    },
+    {
+      title: "DIRT TRACK FGVN",
+      url: "/dirttrackfgvn"
+    },
+    {
+      title: "SNOW TRACK",
+      url: "/snowtrackfatracing"
+    },
+    {
+      title: "ГОЛДСПРИНТ",
+      url: "/fatsprints"
+    }
+  ];
+
   return (
-    <div>
-      <Link href="/fatracing">
-          <img width="150" src="/images/fatracing.svg" style={{display:'inline'}}></img>
+    <header className={s.header}>
+      <Link href='/fatracing'>
+        <a className={s.header__logo}>
+          <img
+            width='150'
+            src='/images/fatracing.svg'
+            style={{ display: "inline" }}
+          ></img>
+        </a>
       </Link>
-      ++
-      <Link href="/tipacyclo">
-        <a>ТИПА ЦИКЛОКРОСС</a>
-      </Link>
-      ++
-      <Link href="/tourdeselishi">
-        <a>Тур Де Селищи</a>
-      </Link>
-      ++
-      <Link href="/vyalomarafon">
-        <a>Вяломарафон</a>
-      </Link>
-      ++
-      <Link href="/tsargravel">
-        <a>ЦАРЬ ГРЕЙДЕР</a>
-      </Link>
-      ++
-      <Link href="/critvn">
-        <a>НОВГОРОДСКИЙ КРИТ</a>
-      </Link>
-      ++
-      <Link href="/dirttrackfgvn">
-        <a>DIRT TRACK FGVN</a>
-      </Link>
-      ++
-      <Link href="/snowtrackfatracing">
-        <a>SNOW TRACK</a>
-      </Link>
-      ++
-      <Link href="/fatsprints">
-        <a>ГОЛДСПРИНТ</a>
-      </Link>
-    </div>
-  )
+      <ul className={s.header__linksList}>
+        {links.map((l) => (
+          <li className={s.header__link}>
+            <Link href={l.url}>
+              <a className={s.header__title}>{l.title}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </header>
+  );
 }
