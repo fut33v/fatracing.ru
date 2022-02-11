@@ -14,5 +14,4 @@ will be in out/
 
 
 ###buid and run docker locally
-docker build -t fatracing
-docker run -it -p 8666:8666 fatracing
+docker build -t fatracing . && docker run -it -p 8666:8666 fatracing

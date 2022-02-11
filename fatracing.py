@@ -20,9 +20,10 @@ def get_file(filename):  # pragma: no cover
         # This should not be so non-obvious
         return open(src).read()
     except IOError as exc:
-        return str(exc)
+        raise str(exc)
         
 app = Flask(__name__)
+
 
 @app.route('/<path:path>')
 def get_resource(path):  # pragma: no cover
@@ -33,11 +34,27 @@ def get_resource(path):  # pragma: no cover
     #    ".json": "text/json",
     #    
     #}
+    #print (path,path.split('/'))
+    if len(path.split('/')) == 1:
+        if '.' not in path:
+            path+=".html"
     complete_path = os.path.join(root_dir(), "out/"+path)
     ext = os.path.splitext(path)[1]
+    try:
+        mimetype = mimetypes.types_map[ext] #guess_type(, "text/html")
+        content = get_file(complete_path)
+        return Response(content, mimetype=mimetype)
+    except:
+        return page_not_found()
+    
+    
+@app.errorhandler(404)
+def page_not_found():
+    complete_path = os.path.join(root_dir(), "out/404.html")
+    ext = os.path.splitext("out/404.html")[1]
     mimetype = mimetypes.types_map[ext] #guess_type(, "text/html")
     content = get_file(complete_path)
-    return Response(content, mimetype=mimetype)
+    return Response(content, mimetype=mimetype),404
     
 @app.route('/', methods=['GET'])
 def index():  # pragma: no cover
