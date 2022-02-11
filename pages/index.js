@@ -1,12 +1,14 @@
-import Container from '../components/container'
-import Layout from '../components/layout'
-import Header from '../components/header'
-import Head from 'next/head'
-import Link from 'next/link'
-// import markdownToHtml from '../lib/markdownToHtml'
-// import { getAllPosts } from '../lib/api'
+import Container from "../components/container";
+import Layout from "../components/layout";
+import Header from "../components/header";
+import Head from "next/head";
+import Link from "next/link";
+import markdownToHtml from "../lib/markdownToHtml";
+import { getPostBySlug, getAllPosts } from "../lib/api";
 
-export default function Index({ allPosts }) {
+import PostBody from "../components/post-body";
+
+export default function Index({ allPosts, hero }) {
   return (
     <>
       <Layout>
@@ -15,52 +17,33 @@ export default function Index({ allPosts }) {
         </Head>
         <Container>
           <Header />
-
-          {/* <article className="mb-32">
-            <Head>
-              <title>
-                {post.title}
-              </title>
-            </Head>
-            <PostBody content={post.content} />
-          </article> */}
-
-
+          <article className='mb-32'>
+            <PostBody content={hero.content} />
+          </article>
         </Container>
       </Layout>
     </>
-  )
+  );
 }
 
-// export async function getStaticProps({ params }) {
-//   const post = getPostBySlug("fatracing", [
-//     'title',
-//     'content',
-//   ])
-//   const content = await markdownToHtml(post.content || '')
+export async function getStaticProps() {
+  const mainPost = getPostBySlug("fatracing", ["title", "content"]);
+  const mainPostMD = await markdownToHtml(mainPost.content || "");
+  const hero = {
+    content: mainPostMD,
+    title: mainPost.title
+  };
 
-//   return {
-//     props: {
-//       post: {
-//         ...post,
-//         content,
-//       },
-//     },
-//   }
-// }
+  const allPosts = getAllPosts([
+    "title",
+    "date",
+    "slug",
+    "author",
+    "coverImage",
+    "excerpt"
+  ]);
 
-
-// export async function getStaticProps() {
-//   const allPosts = getAllPosts([
-//     'title',
-//     'date',
-//     'slug',
-//     'author',
-//     'coverImage',
-//     'excerpt',
-//   ])
-
-//   return {
-//     props: { allPosts },
-//   }
-// }
+  return {
+    props: { allPosts, hero }
+  };
+}
