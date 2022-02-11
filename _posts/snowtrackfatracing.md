@@ -1,5 +1,6 @@
 ---
 title: 'SNOW TRACK'
+meta: 'Зимняя гонка на выбывание.'
 ---
 
 ## SNOW TRACK
