@@ -1,5 +1,6 @@
 ---
 title: 'DIRT TRACK FGVN'
+meta: 'Гонка на выбывание.'
 ---
 
 ## DIRT TRACK FGVN
