@@ -4,8 +4,8 @@ MAINTAINER Denis Bolotov 'deker101@gmail.com'
 #ENV NODE_ENV=production
 WORKDIR /app
 
-COPY *.js .
-COPY *.json .
+COPY *.js ./
+COPY *.json ./
 RUN npm install parcel node-fetch
 COPY components components
 COPY lib lib
